@@ -3,6 +3,10 @@ package easy;
 import java.util.ArrayList;
 import java.util.List;
 
+/*Runtime: 1000 ms
+	Memory Usage: 39.9 MB
+ * 
+ * */
 public class TwoSum {
 	public static void main(String[] args) {
 		int[] array = {2,7,11,15};
