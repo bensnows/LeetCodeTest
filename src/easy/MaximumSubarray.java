@@ -13,7 +13,9 @@ public class MaximumSubarray {
 			sum += nums[i];
 			if (sum > finalSum) {
 				finalSum = sum;
-			} else {
+			}
+
+			if (sum < 0) {
 				sum = 0;
 			}
 		}

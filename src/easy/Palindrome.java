@@ -14,6 +14,7 @@ public class Palindrome {
 		int remain = x;
 		if (x >= 0) {
 			ArrayList<Integer> list = new ArrayList<Integer>();
+			//將餘數存入
 			while (remain / 10 >= 1 ) {
 				list.add(remain % 10);
 				remain/=10;
@@ -21,6 +22,7 @@ public class Palindrome {
 			list.add(remain);
 			
 			for(int index = 0; index<(list.size()/2);index++) {
+				//取頭尾比較
 				if(list.get(index)!=list.get(list.size()-1-index)){
 					return false;
 				}
