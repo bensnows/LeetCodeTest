@@ -5,33 +5,32 @@ import java.util.List;
 
 import model.TreeNode;
 
+/**
+ * @author ·s
+ * in order
+ * sequence of get value:<br/>
+ * left->center->right<br/>
+ *     4<br/>
+ *    / \<br/>
+ *	 2   6<br/>
+ *	/ \ / \<br/>
+ * 1  3 5  7<br/>
+ * 1234567
+ */
 public class BinaryTreeInorderTraversal {
 	public List<Integer> inorderTraversal(TreeNode root) {
-
-		if (root == null) {
-			return null;
-		}
-		List<Integer> node = new ArrayList<Integer>();
-		node.add(root.val);
-
-		TreeNode left = root.left;
-		TreeNode right = root.right;
-
-		if (left == null && right != null) {
-			if (right.left != null) {
-				left = right.left;
-				right.left = null;
-			} else if (right.right != null) {
-				left = right.right;
-				right.right = null;
-			} else {
-				left = right;
-				right = null;
-			}
-		}
-		node.add(left.val);
-		node.add(right.val);
-
+		List<Integer> node = new ArrayList<>();
+		
+		getNode(root, node);
+		
 		return node;
+	}
+
+	private void getNode(TreeNode root, List<Integer> node) {
+		if(root!=null) {
+			getNode(root.left, node);
+			node.add(root.val);
+			getNode(root.right, node);
+		}
 	}
 }
